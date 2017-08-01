@@ -105,8 +105,7 @@ void main ()
 
 
 	
-	delete userField;
-	delete computerField;
+	
 	
 	delete view;
 	cout<<endl<<"deleted"<<endl;
