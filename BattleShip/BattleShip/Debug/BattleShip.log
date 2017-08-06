@@ -1,7 +1,7 @@
-﻿Build started 06.08.2017 15:17:27.
-     1>Project "D:\BattleShip\BattleShip\BattleShip\BattleShip.vcxproj" on node 2 (build target(s)).
-     1>PrepareForBuild:
-         Creating directory "D:\BattleShip\BattleShip\Debug\".
+﻿Build started 06.08.2017 19:08:03.
+     1>Project "D:\BattleShip\BattleShip\BattleShip\BattleShip.vcxproj" on node 2 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "Debug\BattleShip.lastbuildstate".
        InitializeBuildStatus:
          Creating "Debug\BattleShip.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
@@ -45,6 +45,7 @@
          Debug\UserPlayer.obj
          Debug\View.obj
        Manifest:
+         Deleting file "Debug\BattleShip.exe.embed.manifest".
          C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\BattleShip.exe.embed.manifest" /manifest Debug\BattleShip.exe.intermediate.manifest
          C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\BattleShip.exe.embed.manifest.res" Debug\BattleShip_manifest.rc 
        LinkEmbedManifest:
@@ -65,8 +66,8 @@
        FinalizeBuildStatus:
          Deleting file "Debug\BattleShip.unsuccessfulbuild".
          Touching "Debug\BattleShip.lastbuildstate".
-     1>Done Building Project "D:\BattleShip\BattleShip\BattleShip\BattleShip.vcxproj" (build target(s)).
+     1>Done Building Project "D:\BattleShip\BattleShip\BattleShip\BattleShip.vcxproj" (rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:18.53
+Time Elapsed 00:00:13.54

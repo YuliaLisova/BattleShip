@@ -127,6 +127,7 @@ void View :: PrintComputerField (const Field & field)
 			  {
 				  SetColor(Black, Yellow);
 				  cout <<"x";
+				  SetColor(White, Black);
 			  }
 			  else if (field.array[i][j].cellstate_ == KILLED)
 			  {
