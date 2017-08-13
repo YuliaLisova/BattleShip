@@ -32,18 +32,21 @@ void View :: PrintUserField (const Field & field)
 	cout.width(2);
 		cout<<" ";
 		
-	for (int i = 65 ; i<= 74; i++)
+		int A = static_cast <int> ('A');
+		int J = static_cast <int> ('J');
+
+	for (int i = A ; i <= J; i++)
 	{
 		
 		cout.width(2);
 		cout<<static_cast <char> (i);
 	}
 	cout<<endl;
-	for (int i =0; i<10; i++)
+	for (int i = 0; i < field.size_; i++)
 	{
 		
 		cout<<setw(2)<<i+1;
-		for (int j = 0; j<10; j++)
+		for (int j = 0; j < field.size_; j++)
 		{
 			cout.width(2);
 			if (field.array[i][j].cellPosition_ == EMPTY)
@@ -103,17 +106,22 @@ void View :: PrintComputerField (const Field & field)
 {
 	cout<<endl<<"Computer's field"<<endl;
 	cout.width(2);
-		cout<<" ";
-	for (int i = 65 ; i<= 74; i++)
-	{cout.width(2);
+	cout<<" ";
+	
+	int A = static_cast <int> ('A');
+	int J = static_cast <int> ('J');
+
+	for (int i = A ; i <= J; i++)
+	{
+		cout.width(2);
 		cout<<static_cast <char> (i);
 	}
 	cout<<endl;
 	
-	for (int i = 0; i< 10; i++)
+	for (int i = 0; i < field.size_; i++)
 	{
 		cout<<setw(2)<<i+1;
-		for (int j = 0; j <10; j ++)
+		for (int j = 0; j < field.size_; j ++)
 		
 		{
 		cout.width(2);

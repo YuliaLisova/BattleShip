@@ -2,9 +2,9 @@
 
 Field ::Field()
 	{
-		for (int i = 0; i<10; i ++)
+		for (int i = 0; i < size_; i ++)
 	{
-		for (int j = 0; j<10; j ++)
+		for (int j = 0; j < size_; j ++)
 		{
 			array[i][j].cellPosition_ = EMPTY;
 			array[i][j].cellstate_ = CLEAN;
@@ -23,9 +23,9 @@ Field ::~Field()
 
 void Field :: ClearField ()
 {
-  for (int i=0; i<10; i++)
+  for (int i = 0; i < size_; i++)
 	{
-			for (int j=0; j<10; j++)
+			for (int j = 0; j < size_; j++)
 			{
 				array[i][j].cellPosition_ = EMPTY;
 			}

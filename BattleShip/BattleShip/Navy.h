@@ -8,6 +8,8 @@ using namespace std;
 class Navy : public Observer
 {
 public:
+	static const int maxDecks_ = 4;
+	static const int minShips_ = 1;
 	vector <Ship*> ships_;
 	bool isAlive_;
 	int countShips_;	

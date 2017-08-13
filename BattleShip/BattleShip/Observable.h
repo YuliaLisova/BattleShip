@@ -11,7 +11,7 @@ private:
 	
 public:
 	Observable();
-	~Observable();
+	virtual ~Observable();
 	void AddObserver(Observer* observer);	
 	void Notify();
 	

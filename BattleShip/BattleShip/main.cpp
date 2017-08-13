@@ -27,8 +27,8 @@ void main ()
 
 	
 
-	int deckCount = 4;
-	int shipCount = 1;
+	int deckCount = Navy :: maxDecks_; //4
+	int shipCount = Navy :: minShips_; //1
 
 	for (deckCount; deckCount > 0; deckCount--, shipCount++) 
 	{
@@ -103,10 +103,7 @@ void main ()
 
 	cout<<endl<<"game over"<<endl;
 
-
-	
-	
-	
+		
 	delete view;
 	cout<<endl<<"deleted"<<endl;
 	for (int i = 0; i< userNavy->ships_.size(); i ++)

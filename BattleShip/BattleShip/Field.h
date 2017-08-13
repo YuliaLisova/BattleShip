@@ -7,7 +7,8 @@
 class Field: public Observable
 {
 public:
-	Cell array [10][10] ;
+	static const int size_ = 10;
+	Cell array [size_][size_] ;
 
 	Field ();
 	
