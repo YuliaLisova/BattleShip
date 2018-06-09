@@ -83,11 +83,12 @@ void main ()
 		do
 		    {
 				cout<<endl<<"Computer's  shoot"<<endl;
-				Sleep(1000);
-		        point = computerPlayer.Shoot();
+				Sleep(2000);
+				point = computerPlayer.IntelectualShoot();
 		       isHit = controller.CheckShootRight(point, userField);
 		
 		       userField->Notify();
+			   Sleep(2000);
 		   }
 
 			while (isHit !=false && userNavy->isAlive_ == true) ;
