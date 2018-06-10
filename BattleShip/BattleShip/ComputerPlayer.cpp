@@ -212,8 +212,6 @@ Point ComputerPlayer :: IntelectualShoot ()
 			
 		}
 
-
-
 	}
 
 	else if (previousShoot.cellstate_ == MISSED && shootOrientation != DEFAULT)
@@ -266,7 +264,7 @@ void ComputerPlayer :: FindOrientation ()
 			shootOrientation = HORIZONTAL;
 		else {}
 }
-Point ComputerPlayer :: RandomShootAroundCell ()
+Point ComputerPlayer :: ShootAroundCell ()
 {
 	Point NextShoot;
 	NextShoot.xPosition_= lastSuccessfulShoot.rowNumber_;
@@ -297,6 +295,75 @@ Point ComputerPlayer :: RandomShootAroundCell ()
 	}
 
 	return NextShoot;
+}
+
+Point ComputerPlayer :: RandomShootAroundCell ()
+{
+	shotAroundCell nextCell;
+	do 
+	{
+		nextCell = shotAroundCell(rand()%4);
+	}
+		while (!IsCellClean(nextCell));
+
+	Point NextShoot;
+	NextShoot.xPosition_= lastSuccessfulShoot.rowNumber_;
+	NextShoot.yPosition_= lastSuccessfulShoot.columnNumber_;
+
+	switch (nextCell)
+	{
+	case RIGHT:	NextShoot.yPosition_ += 1;	
+		break;
+	case LEFT: NextShoot.yPosition_ -= 1;
+		break;
+	case UP:  NextShoot.xPosition_ += 1;
+		break;    
+	case DOWN: NextShoot.xPosition_ -= 1;
+		break;
+	}
+
+	return NextShoot;
+}
+
+bool ComputerPlayer :: IsCellClean (shotAroundCell nextCell)
+{
+	bool isClean = false;
+
+	switch (nextCell)
+	{
+	case RIGHT:
+		{
+		    if (lastSuccessfulShoot.columnNumber_ < 9 &&
+		        this->enemyField_->array[lastSuccessfulShoot.rowNumber_][lastSuccessfulShoot.columnNumber_ +1].cellstate_ == CLEAN)
+			        isClean = true;
+		}
+		break;
+	case LEFT:
+		{
+			if (lastSuccessfulShoot.columnNumber_ > 0 &&
+		        this->enemyField_->array[lastSuccessfulShoot.rowNumber_][lastSuccessfulShoot.columnNumber_ -1].cellstate_ == CLEAN)
+				isClean = true;
+		}
+		break;
+	case UP:
+		{
+		     if (lastSuccessfulShoot.rowNumber_ < 9 &&
+		        this->enemyField_->array[lastSuccessfulShoot.rowNumber_ + 1][lastSuccessfulShoot.columnNumber_].cellstate_ == CLEAN)
+				isClean = true;
+		}
+
+		break;    
+	case DOWN:
+		{
+			if (lastSuccessfulShoot.rowNumber_ > 0 &&
+		        this->enemyField_->array[lastSuccessfulShoot.rowNumber_ - 1][lastSuccessfulShoot.columnNumber_].cellstate_ == CLEAN)
+				isClean = true;
+		}
+		break;
+    
+	}
+
+	return isClean;
 }
 
 void ComputerPlayer :: SetBorders ()

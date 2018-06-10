@@ -9,7 +9,16 @@
 using namespace std;
 class ComputerPlayer : public Player
 {
+	
 private:
+	enum shotAroundCell
+	{
+		RIGHT =0,
+		LEFT,
+		UP,
+		DOWN
+	};
+
 	Field* enemyField_;
 	Cell previousShoot;
     Cell lastSuccessfulShoot;
@@ -17,8 +26,10 @@ private:
 	Orientatoin shootOrientation;
 	void SetBorders (); 
 	Point ShootWithOrientation ();
-	Point RandomShootAroundCell ();
+	Point ShootAroundCell ();
+	Point RandomShootAroundCell();
 	void FindOrientation ();
+	bool IsCellClean (shotAroundCell nextCell);
 
 
 public:
